@@ -44,7 +44,7 @@ ball_2.speed(0)
 ball_2.shape("circle")
 ball_2.color("cyan")
 ball_2.penup()
-ball_2.goto(0, 20)
+ball_2.goto(0, 0)
 ball_2.dx = 2
 ball_2.dy = 2
 
