@@ -94,7 +94,7 @@ while True:
 
 # Border checking
 
-    # Top and bottom
+    # Top and Bottom
         #Ball_1 
     if ball_1.ycor() > 290:
         ball_1.sety(290)
@@ -116,6 +116,25 @@ while True:
         ball_2.sety(-290)
         ball_2.dy *= -1
         
+    # Left and Right
+        #Ball_1
+    if ball_1.xcor() > 350:
+        ball_1.goto(0, 0)
+        ball_1.dx *= -1
+
+    elif ball_1.xcor() < -350:
+        ball_1.goto(0, 0)
+        ball_1.dx *= -1
+
+        #Ball_2
+    if ball_2.xcor() > 350:
+        ball_2.goto(0, 0)
+        ball_2.dx *= -1
+
+    elif ball_2.xcor() < -350:
+        ball_2.goto(0, 0)
+        ball_2.dx *= -1
+
 
 
    
