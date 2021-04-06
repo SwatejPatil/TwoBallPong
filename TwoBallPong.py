@@ -1,6 +1,7 @@
 # Pong Game in Python using Turtle
 #Importing Important Libraries
 import turtle
+import os
 
 #Main Game Window
 window = turtle.Screen()
@@ -35,8 +36,8 @@ ball_1.shape("circle")
 ball_1.color("yellow")
 ball_1.penup()
 ball_1.goto(0, 0)
-ball_1.dx = 2
-ball_1.dy = 2
+ball_1.dx = 1
+ball_1.dy = 1
 
 #Ball 2
 ball_2 = turtle.Turtle()
@@ -45,8 +46,8 @@ ball_2.shape("circle")
 ball_2.color("cyan")
 ball_2.penup()
 ball_2.goto(0, 0)
-ball_2.dx = 2
-ball_2.dy = 2
+ball_2.dx = -1
+ball_2.dy = -1
 
 
 
@@ -83,3 +84,38 @@ window.onkeypress(paddle_2_down, "Down")
 while True:
     window.update()
 
+    # Ball_1 Movement
+    ball_1.setx(ball_1.xcor() + ball_1.dx)
+    ball_1.sety(ball_1.ycor() + ball_1.dy)
+
+    # Ball_2 Movement
+    ball_2.setx(ball_2.xcor() + ball_2.dx)
+    ball_2.sety(ball_2.ycor() + ball_2.dy)
+
+# Border checking
+
+    # Top and bottom
+        #Ball_1 
+    if ball_1.ycor() > 290:
+        ball_1.sety(290)
+        ball_1.dy *= -1
+        
+
+    elif ball_1.ycor() < -290:
+        ball_1.sety(-290)
+        ball_1.dy *= -1
+        
+
+        #Ball_2
+    if ball_2.ycor() > 290:
+        ball_2.sety(290)
+        ball_2.dy *= -1
+        
+
+    elif ball_2.ycor() < -290:
+        ball_2.sety(-290)
+        ball_2.dy *= -1
+        
+
+
+   
