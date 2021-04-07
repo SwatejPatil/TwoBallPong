@@ -36,8 +36,8 @@ ball_1.shape("circle")
 ball_1.color("yellow")
 ball_1.penup()
 ball_1.goto(0, 0)
-ball_1.dx = 1
-ball_1.dy = 1
+ball_1.dx = 0.5
+ball_1.dy = 0.5
 
 #Ball 2
 ball_2 = turtle.Turtle()
@@ -46,8 +46,8 @@ ball_2.shape("circle")
 ball_2.color("cyan")
 ball_2.penup()
 ball_2.goto(0, 0)
-ball_2.dx = -1
-ball_2.dy = -1
+ball_2.dx = -0.5
+ball_2.dy = -0.5
 
 
 
@@ -95,29 +95,28 @@ while True:
 # Border checking
 
     # Top and Bottom
-        #Ball_1 
+    #Ball_1
     if ball_1.ycor() > 290:
         ball_1.sety(290)
         ball_1.dy *= -1
-        
 
     elif ball_1.ycor() < -290:
         ball_1.sety(-290)
         ball_1.dy *= -1
-        
 
-        #Ball_2
+    # Top and Bottom
+    #Ball_2
     if ball_2.ycor() > 290:
         ball_2.sety(290)
         ball_2.dy *= -1
-        
 
     elif ball_2.ycor() < -290:
         ball_2.sety(-290)
         ball_2.dy *= -1
-        
-    # Left and Right
-        #Ball_1
+
+
+    # Left and right
+    #Ball_1
     if ball_1.xcor() > 350:
         ball_1.goto(0, 0)
         ball_1.dx *= -1
@@ -126,15 +125,28 @@ while True:
         ball_1.goto(0, 0)
         ball_1.dx *= -1
 
-        #Ball_2
+    # Left and right
+    #Ball_2
     if ball_2.xcor() > 350:
         ball_2.goto(0, 0)
         ball_2.dx *= -1
-
     elif ball_2.xcor() < -350:
         ball_2.goto(0, 0)
         ball_2.dx *= -1
 
 
 
-   
+
+    # Paddle and ball_1 collisions
+    if ball_1.xcor() < -340 and ball_1.ycor() < paddle_1.ycor() + 50 and ball_1.ycor() > paddle_1.ycor() - 50:
+        ball_1.dx *= -1
+
+    elif ball_1.xcor() > 340 and ball_1.ycor() < paddle_2.ycor() + 50 and ball_1.ycor() > paddle_2.ycor() - 50:
+        ball_1.dx *= -1
+
+    # Paddle and ball_2 collisions
+    if ball_2.xcor() < -340 and ball_2.ycor() < paddle_1.ycor() + 50 and ball_2.ycor() > paddle_1.ycor() - 50:
+        ball_2.dx *= -1
+
+    elif ball_2.xcor() > 340 and ball_2.ycor() < paddle_2.ycor() + 50 and ball_2.ycor() > paddle_2.ycor() - 50:
+        ball_2.dx *= -1
