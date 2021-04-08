@@ -10,6 +10,10 @@ window.bgcolor("black")
 window.setup(width=800, height=900)
 window.tracer(0)
 
+#Scores 
+score_a = 0
+score_b = 0
+
 #Player 1 Paddle
 paddle_1 = turtle.Turtle()
 paddle_1.speed(0)
@@ -48,6 +52,17 @@ ball_2.penup()
 ball_2.goto(0, 0)
 ball_2.dx = -0.5
 ball_2.dy = -0.5
+
+# Pen
+pen = turtle.Turtle()
+pen.speed(0)
+pen.shape("square")
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "normal"))
+
 
 
 
@@ -118,19 +133,32 @@ while True:
     # Left and right
     #Ball_1
     if ball_1.xcor() > 350:
+        score_a += 1
+        pen.clear()
+        pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
         ball_1.goto(0, 0)
         ball_1.dx *= -1
 
     elif ball_1.xcor() < -350:
+        score_b += 1
+        pen.clear()
+        pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
         ball_1.goto(0, 0)
         ball_1.dx *= -1
 
     # Left and right
     #Ball_2
     if ball_2.xcor() > 350:
+        score_a += 1
+        pen.clear()
+        pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
         ball_2.goto(0, 0)
         ball_2.dx *= -1
+
     elif ball_2.xcor() < -350:
+        score_b += 1
+        pen.clear()
+        pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
         ball_2.goto(0, 0)
         ball_2.dx *= -1
 
