@@ -41,7 +41,7 @@ ball_1.color("yellow")
 ball_1.penup()
 ball_1.goto(0, 0)
 ball_1.dx = 0.5
-ball_1.dy = 0.5
+ball_1.dy = -0.5
 
 #Ball 2
 ball_2 = turtle.Turtle()
@@ -51,7 +51,7 @@ ball_2.color("cyan")
 ball_2.penup()
 ball_2.goto(0, 0)
 ball_2.dx = -0.5
-ball_2.dy = -0.5
+ball_2.dy = 0.5
 
 # Pen
 pen = turtle.Turtle()
