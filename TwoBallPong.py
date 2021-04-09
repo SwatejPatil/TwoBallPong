@@ -10,7 +10,7 @@ window.bgcolor("black")
 window.setup(width=800, height=900)
 window.tracer(0)
 
-#Scores 
+#Scores
 score_a = 0
 score_b = 0
 
@@ -114,20 +114,24 @@ while True:
     if ball_1.ycor() > 290:
         ball_1.sety(290)
         ball_1.dy *= -1
+        os.system("aplay b.wav&")
 
     elif ball_1.ycor() < -290:
         ball_1.sety(-290)
         ball_1.dy *= -1
+        os.system("aplay b.wav&")
 
     # Top and Bottom
     #Ball_2
     if ball_2.ycor() > 290:
         ball_2.sety(290)
         ball_2.dy *= -1
+        os.system("aplay b.wav&")
 
     elif ball_2.ycor() < -290:
         ball_2.sety(-290)
         ball_2.dy *= -1
+        os.system("aplay b.wav&")
 
 
     # Left and right
@@ -138,6 +142,8 @@ while True:
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
         ball_1.goto(0, 0)
         ball_1.dx *= -1
+        os.system("aplay b.wav&")
+
 
     elif ball_1.xcor() < -350:
         score_b += 1
@@ -145,6 +151,7 @@ while True:
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
         ball_1.goto(0, 0)
         ball_1.dx *= -1
+        os.system("aplay b.wav&")
 
     # Left and right
     #Ball_2
@@ -154,6 +161,7 @@ while True:
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
         ball_2.goto(0, 0)
         ball_2.dx *= -1
+        os.system("aplay b.wav&")
 
     elif ball_2.xcor() < -350:
         score_b += 1
@@ -161,6 +169,7 @@ while True:
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
         ball_2.goto(0, 0)
         ball_2.dx *= -1
+        os.system("aplay b.wav&")
 
 
 
